@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andrea's Graduation Celebration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f5f0e8;
+        --sand: #ddd3c6;
+        --taupe: #b7a998;
+        --stone: #8d7d6d;
+        --cocoa: #6d5849;
+        --espresso: #3e2d24;
+        --white: #fffdf9;
+        --shadow: rgba(62, 45, 36, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(180deg, var(--cream) 0%, #f8f4ee 100%);
+        color: var(--espresso);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page-shell {
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(18px);
+        background: rgba(245, 240, 232, 0.72);
+        border-bottom: 1px solid rgba(109, 88, 73, 0.12);
+      }
+
+      .nav-inner {
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        gap: 1rem;
+      }
+
+      .brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.65rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.25rem;
+        font-size: 0.95rem;
+        color: var(--cocoa);
+      }
+
+      .button,
+      button {
+        border: none;
+        border-radius: 999px;
+        padding: 0.9rem 1.35rem;
+        font: inherit;
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button:hover,
+      button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button-primary {
+        background: var(--espresso);
+        color: var(--white);
+        box-shadow: 0 10px 30px var(--shadow);
+      }
+
+      .button-secondary {
+        background: transparent;
+        color: var(--espresso);
+        border: 1px solid rgba(62, 45, 36, 0.18);
+      }
+
+      .hero {
+        padding: 4rem 0 2.5rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 1.5rem;
+        align-items: stretch;
+      }
+
+      .hero-copy,
+      .hero-image,
+      .card,
+      .rsvp-card {
+        border-radius: 2rem;
+        overflow: hidden;
+        background: rgba(255, 253, 249, 0.72);
+        border: 1px solid rgba(109, 88, 73, 0.12);
+        box-shadow: 0 20px 60px var(--shadow);
+      }
+
+      .hero-copy {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 640px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.15)),
+          radial-gradient(circle at top left, rgba(221, 211, 198, 0.75), transparent 50%),
+          var(--white);
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.78rem;
+        color: var(--stone);
+        margin-bottom: 1rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", serif;
+        margin: 0;
+        line-height: 0.95;
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 8vw, 6.4rem);
+        margin-bottom: 1.25rem;
+      }
+
+      .hero-copy p {
+        font-size: 1.02rem;
+        line-height: 1.75;
+        max-width: 39rem;
+        color: var(--cocoa);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1rem;
+      }
+
+      .hero-meta {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin-top: 2rem;
+      }
+
+      .meta-box {
+        padding: 1rem;
+        border-radius: 1.3rem;
+        background: rgba(245, 240, 232, 0.8);
+        border: 1px solid rgba(109, 88, 73, 0.1);
+      }
+
+      .meta-label {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        color: var(--stone);
+        margin-bottom: 0.45rem;
+      }
+
+      .meta-value {
+        font-size: 0.97rem;
+        color: var(--espresso);
+      }
+
+      .hero-image {
+        min-height: 640px;
+        background:
+          linear-gradient(rgba(62,45,36,0.08), rgba(62,45,36,0.18)),
+          url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80') center/cover;
+        position: relative;
+      }
+
+      .image-badge {
+        position: absolute;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        background: rgba(255, 253, 249, 0.78);
+        border: 1px solid rgba(109, 88, 73, 0.14);
+        backdrop-filter: blur(12px);
+        border-radius: 1.2rem;
+        padding: 0.9rem 1rem;
+        max-width: 230px;
+      }
+
+      .image-badge strong {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.35rem;
+        margin-bottom: 0.25rem;
+      }
+
+      section {
+        padding: 1rem 0 2.25rem;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+      }
+
+      .section-heading p {
+        max-width: 35rem;
+        color: var(--cocoa);
+        line-height: 1.7;
+      }
+
+      .details-grid,
+      .gallery-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .details-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1.2fr 0.8fr 0.8fr;
+        grid-auto-rows: 220px;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+
+      .card h3 {
+        font-size: 1.9rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .card p,
+      .card li {
+        color: var(--cocoa);
+        line-height: 1.75;
+        font-size: 0.98rem;
+      }
+
+      .card ul {
+        padding-left: 1rem;
+        margin: 0.6rem 0 0;
+      }
+
+      .gallery-tile {
+        border-radius: 2rem;
+        overflow: hidden;
+        min-height: 100%;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 20px 60px var(--shadow);
+      }
+
+      .gallery-tile.tall {
+        grid-row: span 2;
+      }
+
+      .rsvp-wrap {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .rsvp-card {
+        padding: 2rem;
+      }
+
+      .rsvp-note {
+        background: linear-gradient(180deg, rgba(221,211,198,0.55), rgba(255,255,255,0.4));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .rsvp-note h2 {
+        font-size: clamp(2.1rem, 4vw, 3.3rem);
+        margin-bottom: 0.8rem;
+      }
+
+      .rsvp-note p {
+        color: var(--cocoa);
+        line-height: 1.8;
+      }
+
+      form {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      label {
+        display: grid;
+        gap: 0.45rem;
+        font-size: 0.92rem;
+        color: var(--cocoa);
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(109, 88, 73, 0.18);
+        background: rgba(255, 253, 249, 0.95);
+        border-radius: 1rem;
+        padding: 0.95rem 1rem;
+        font: inherit;
+        color: var(--espresso);
+        outline: none;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--stone);
+        box-shadow: 0 0 0 4px rgba(183, 169, 152, 0.18);
+      }
+
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .full {
+        grid-column: 1 / -1;
+      }
+
+      .small-note {
+        font-size: 0.84rem;
+        color: var(--stone);
+        line-height: 1.7;
+      }
+
+      .success {
+        display: none;
+        margin-top: 1rem;
+        padding: 1rem 1.1rem;
+        border-radius: 1rem;
+        background: rgba(221, 211, 198, 0.45);
+        color: var(--espresso);
+      }
+
+      footer {
+        padding: 0.5rem 0 3rem;
+        color: var(--stone);
+        text-align: center;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .details-grid,
+        .rsvp-wrap,
+        .gallery-grid,
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy,
+        .hero-image {
+          min-height: auto;
+        }
+
+        .hero-meta {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-grid {
+          grid-auto-rows: 240px;
+        }
+
+        .gallery-tile.tall {
+          grid-row: span 1;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 2rem;
+        }
+
+        .hero-copy,
+        .card,
+        .rsvp-card {
+          padding: 1.35rem;
+          border-radius: 1.5rem;
+        }
+
+        h1 {
+          line-height: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="#home" class="brand">Andrea Grad Weekend</a>
+        <div class="nav-links">
+          <a href="#details">Details</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#rsvp">RSVP</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="hero" id="home">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Class of 2026</div>
+            <h1>Come celebrate my graduation.</h1>
+            <p>
+              A soft, elevated night for family, friends, and everyone who helped make this chapter happen. Join me for good food, pretty details, and a moment worth dressing up for.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#rsvp">RSVP now</a>
+              <a class="button button-secondary" href="#details">View details</a>
+            </div>
+            <div class="hero-meta">
+              <div class="meta-box">
+                <div class="meta-label">Date</div>
+                <div class="meta-value">Saturday, May 2, 2026</div>
+              </div>
+              <div class="meta-box">
+                <div class="meta-label">Time</div>
+                <div class="meta-value">5:30 PM – 9:30 PM</div>
+              </div>
+              <div class="meta-box">
+                <div class="meta-label">Location</div>
+                <div class="meta-value">Pasadena, California</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image" aria-label="Graduation celebration mood image">
+            <div class="image-badge">
+              <strong>Soft luxe vibe</strong>
+              neutrals, warm browns, creamy tones, editorial layout, and simple elegant details.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="details">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Event details</div>
+            <h2>The plan</h2>
+          </div>
+          <p>
+            Swap in your real schedule, address, parking notes, dress code, and any extra celebration info you want guests to know ahead of time.
+          </p>
+        </div>
+
+        <div class="details-grid">
+          <article class="card">
+            <h3>What to expect</h3>
+            <p>
+              An evening of photos, music, good energy, and celebrating the end of one chapter and the start of the next.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Dress code</h3>
+            <p>
+              Dressy casual or semi-formal. Think polished, neutral, glowy, and camera-ready.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Extras</h3>
+            <ul>
+              <li>Parking details can go here</li>
+              <li>Plus one policy can go here</li>
+              <li>RSVP deadline and arrival notes can go here</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Moodboard</div>
+            <h2>The vibe</h2>
+          </div>
+          <p>
+            This layout keeps that Pinterest beauty-brand energy but makes it personal for a graduation celebration.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div
+            class="gallery-tile tall"
+            style="background-image: linear-gradient(rgba(62,45,36,.08), rgba(62,45,36,.12)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80');"
+          ></div>
+          <div
+            class="gallery-tile"
+            style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80');"
+          ></div>
+          <div
+            class="gallery-tile"
+            style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80');"
+          ></div>
+          <div
+            class="gallery-tile"
+            style="background-image: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80');"
+          ></div>
+          <div
+            class="gallery-tile"
+            style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80');"
+          ></div>
+        </div>
+      </section>
+
+      <section id="rsvp">
+        <div class="rsvp-wrap">
+          <div class="rsvp-card rsvp-note">
+            <div class="eyebrow">RSVP</div>
+            <h2>Save your spot.</h2>
+            <p>
+              This front-end form is styled and ready, but for GitHub Pages you will want to connect it to a form service like Formspree, Basin, or a Google Form.
+            </p>
+            <p class="small-note">
+              Right now the button shows a success message only. Replace the form <code>action</code> later when you choose your RSVP collection method.
+            </p>
+          </div>
+
+          <div class="rsvp-card">
+            <form id="rsvpForm">
+              <div class="form-grid">
+                <label>
+                  Full name
+                  <input type="text" name="name" placeholder="Your name" required />
+                </label>
+
+                <label>
+                  Email or phone
+                  <input type="text" name="contact" placeholder="How I can reach you" required />
+                </label>
+
+                <label>
+                  Will you attend?
+                  <select name="attendance" required>
+                    <option value="">Select one</option>
+                    <option value="yes">Joyfully attending</option>
+                    <option value="no">Can’t make it</option>
+                    <option value="maybe">Maybe</option>
+                  </select>
+                </label>
+
+                <label>
+                  Number of guests
+                  <select name="guests">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </label>
+
+                <label class="full">
+                  Note for Andrea
+                  <textarea name="message" placeholder="Optional message"></textarea>
+                </label>
+              </div>
+
+              <button type="submit" class="button-primary">Submit RSVP</button>
+              <div class="success" id="successMessage">
+                Thanks for replying — your RSVP was recorded for demo purposes.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Made with love for a very cute graduation weekend.
+    </footer>
+
+    <script>
+      const form = document.getElementById('rsvpForm');
+      const successMessage = document.getElementById('successMessage');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        successMessage.style.display = 'block';
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
