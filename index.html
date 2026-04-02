@@ -71,8 +71,7 @@
       }
 
       .hero-card,
-      .section-card,
-      .rsvp-card {
+      .section-card {
         background: rgba(255, 253, 250, 0.85);
         border: 1px solid rgba(75, 56, 45, 0.08);
         box-shadow: 0 20px 50px var(--shadow);
@@ -115,9 +114,7 @@
 
       .hero-card p,
       .section-card p,
-      .section-card li,
-      .rsvp-note,
-      label {
+      .section-card li {
         color: var(--mocha);
         line-height: 1.8;
       }
@@ -191,79 +188,6 @@
         margin-bottom: 0.6rem;
       }
 
-      .rsvp-layout {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 1rem;
-      }
-
-      .rsvp-card {
-        padding: 2rem;
-      }
-
-      .rsvp-side {
-        background: linear-gradient(180deg, rgba(236, 226, 214, 0.65), rgba(255, 253, 250, 0.9));
-      }
-
-      form {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .form-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
-      label {
-        display: grid;
-        gap: 0.45rem;
-        font-size: 0.92rem;
-      }
-
-      input, select, textarea {
-        width: 100%;
-        border: 1px solid rgba(75, 56, 45, 0.12);
-        border-radius: 1rem;
-        padding: 0.95rem 1rem;
-        font: inherit;
-        color: var(--espresso);
-        background: var(--white);
-        outline: none;
-      }
-
-      input:focus, select:focus, textarea:focus {
-        border-color: var(--taupe);
-        box-shadow: 0 0 0 4px rgba(197, 179, 162, 0.16);
-      }
-
-      textarea {
-        min-height: 140px;
-        resize: vertical;
-      }
-
-      .full { grid-column: 1 / -1; }
-
-      .submit {
-        border: none;
-        border-radius: 999px;
-        padding: 0.95rem 1.45rem;
-        background: var(--espresso);
-        color: var(--white);
-        font: inherit;
-        cursor: pointer;
-      }
-
-      .success {
-        display: none;
-        margin-top: 0.5rem;
-        padding: 1rem;
-        border-radius: 1rem;
-        background: rgba(236, 226, 214, 0.55);
-        color: var(--espresso);
-      }
-
       footer {
         text-align: center;
         padding: 0 0 3rem;
@@ -272,16 +196,14 @@
 
       @media (max-width: 900px) {
         .hero-meta,
-        .details-grid,
-        .rsvp-layout,
-        .form-grid {
+        .details-grid {
           grid-template-columns: 1fr;
         }
       }
 
       @media (max-width: 640px) {
         .nav-links { display: none; }
-        .hero-card, .section-card, .rsvp-card { padding: 1.4rem; border-radius: 1.5rem; }
+        .hero-card, .section-card { padding: 1.4rem; border-radius: 1.5rem; }
         .hero { padding-top: 2rem; }
       }
     </style>
@@ -292,7 +214,6 @@
         <a href="#top" class="brand">Andrea's Graduation Celebration 2026</a>
         <div class="nav-links">
           <a href="#details">Details</a>
-          <a href="#rsvp">RSVP</a>
         </div>
       </div>
     </nav>
@@ -305,7 +226,7 @@
           <p>
             Please join me in celebrating my graduation from Pepperdine University, with the people I love most.
           </p>
-          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdsmPs6u75TATGiqE8FWMpNqmYUnueuxADjOWr8B9dVWkcafg/viewform?usp=sharing&ouid=116212188477626816209" target="_blank" rel="noopener noreferrer">RSVP</a>
+          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdsmPs6u75TATGiqE8FWMpNqmYUnueuxADjOWr8B9dVWkcafg/viewform?usp=sharing" target="_blank">RSVP</a>
 
           <div class="hero-meta">
             <div class="meta-box">
@@ -343,46 +264,13 @@
             </div>
             <div class="mini-card">
               <h3>Note</h3>
-              <p>Select RSVP to open the response form in a new tab.</p>
+              <p>Tap RSVP above to respond.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="rsvp">
-        <div class="rsvp-layout">
-          <div class="rsvp-card rsvp-side">
-            <div class="eyebrow">RSVP</div>
-            <h2>Save your spot</h2>
-            <p class="rsvp-note">
-              When you select RSVP, you’ll be taken directly to the form to submit your response.
-            </p>
-            <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdsmPs6u75TATGiqE8FWMpNqmYUnueuxADjOWr8B9dVWkcafg/viewform?usp=sharing&ouid=116212188477626816209" target="_blank" rel="noopener noreferrer">Open RSVP form</a>
-          </div>
-
-          <div class="rsvp-card">
-            <div class="eyebrow">Response form</div>
-            <h2 style="margin-bottom: 0.8rem;">RSVP online</h2>
-            <p class="rsvp-note" style="margin-bottom: 1.25rem;">
-              Please use the RSVP form to let us know if you'll be attending.
-            </p>
-            <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdsmPs6u75TATGiqE8FWMpNqmYUnueuxADjOWr8B9dVWkcafg/viewform?usp=sharing&ouid=116212188477626816209" target="_blank" rel="noopener noreferrer">Go to Google Form</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer>Andrea Black Graduation Celebration</footer>
-
-    <script>
-      const form = document.getElementById('rsvpForm');
-      const successMessage = document.getElementById('successMessage');
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        successMessage.style.display = 'block';
-        form.reset();
-      });
-    </script>
   </body>
 </html>
