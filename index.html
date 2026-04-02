@@ -41,382 +41,428 @@
         background: rgba(247, 242, 235, 0.82);
         backdrop-filter: blur(14px);
         border-bottom: 1px solid rgba(75, 56, 45, 0.08);
-      }
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Andrea's Graduation Celebration</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+          <style>
+            :root {
+              --cream: #f7f2eb;
+              --linen: #ece2d6;
+              --taupe: #c5b3a2;
+              --mocha: #8f7763;
+              --espresso: #4b382d;
+              --white: #fffdfa;
+              --shadow: rgba(75, 56, 45, 0.11);
+            }
 
-      .nav-inner {
-        width: min(1040px, calc(100% - 2rem));
-        margin: 0 auto;
-        padding: 1rem 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
+            * { box-sizing: border-box; }
+            html { scroll-behavior: smooth; }
+            body {
+              margin: 0;
+              font-family: "Inter", sans-serif;
+              background: linear-gradient(180deg, var(--cream) 0%, #fbf8f3 100%);
+              color: var(--espresso);
+            }
 
-      .brand {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.6rem;
-        font-weight: 600;
-      }
+            a { color: inherit; text-decoration: none; }
 
-      .nav-links {
-        display: flex;
-        gap: 1.25rem;
-        font-size: 0.95rem;
-        color: var(--mocha);
-      }
+            .container {
+              width: min(1040px, calc(100% - 2rem));
+              margin: 0 auto;
+            }
 
-      .hero {
-        padding: 4.5rem 0 2rem;
-      }
+            .nav {
+              position: sticky;
+              top: 0;
+              z-index: 10;
+              background: rgba(247, 242, 235, 0.82);
+              backdrop-filter: blur(14px);
+              border-bottom: 1px solid rgba(75, 56, 45, 0.08);
+            }
 
-      .hero-card,
-      .section-card,
-      .rsvp-card {
-        background: rgba(255, 253, 250, 0.85);
-        border: 1px solid rgba(75, 56, 45, 0.08);
-        box-shadow: 0 20px 50px var(--shadow);
-        border-radius: 2rem;
-      }
+            .nav-inner {
+              width: min(1040px, calc(100% - 2rem));
+              margin: 0 auto;
+              padding: 1rem 0;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 1rem;
+            }
 
-      .hero-card {
-        padding: 3.5rem 3rem;
-        text-align: center;
-        background:
-          radial-gradient(circle at top left, rgba(197, 179, 162, 0.2), transparent 35%),
-          radial-gradient(circle at bottom right, rgba(236, 226, 214, 0.55), transparent 30%),
-          rgba(255, 253, 250, 0.94);
-      }
+            .brand {
+              font-family: "Cormorant Garamond", serif;
+              font-size: 1.6rem;
+              font-weight: 600;
+            }
 
-      .eyebrow {
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        font-size: 0.76rem;
-        color: var(--mocha);
-        margin-bottom: 1rem;
-      }
+            .nav-links {
+              display: flex;
+              gap: 1.25rem;
+              font-size: 0.95rem;
+              color: var(--mocha);
+            }
 
-      h1, h2, h3 {
-        font-family: "Cormorant Garamond", serif;
-        margin: 0;
-        font-weight: 600;
-        line-height: 1;
-      }
+            .hero {
+              padding: 4.5rem 0 2rem;
+            }
 
-      h1 {
-        font-size: clamp(3.2rem, 9vw, 6rem);
-        margin-bottom: 1rem;
-      }
+            .hero-card,
+            .section-card,
+            .rsvp-card {
+              background: rgba(255, 253, 250, 0.85);
+              border: 1px solid rgba(75, 56, 45, 0.08);
+              box-shadow: 0 20px 50px var(--shadow);
+              border-radius: 2rem;
+            }
 
-      h2 {
-        font-size: clamp(2.3rem, 5vw, 3.5rem);
-        margin-bottom: 0.6rem;
-      }
+            .hero-card {
+              padding: 3.5rem 3rem;
+              text-align: center;
+              background:
+                radial-gradient(circle at top left, rgba(197, 179, 162, 0.2), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(236, 226, 214, 0.55), transparent 30%),
+                rgba(255, 253, 250, 0.94);
+            }
 
-      .hero-card p,
-      .section-card p,
-      .section-card li,
-      .rsvp-note,
-      label {
-        color: var(--mocha);
-        line-height: 1.8;
-      }
+            .eyebrow {
+              text-transform: uppercase;
+              letter-spacing: 0.2em;
+              font-size: 0.76rem;
+              color: var(--mocha);
+              margin-bottom: 1rem;
+            }
 
-      .hero-card p {
-        max-width: 38rem;
-        margin: 0 auto;
-      }
+            h1, h2, h3 {
+              font-family: "Cormorant Garamond", serif;
+              margin: 0;
+              font-weight: 600;
+              line-height: 1;
+            }
 
-      .hero-meta {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-        margin-top: 2rem;
-      }
+            h1 {
+              font-size: clamp(3.2rem, 9vw, 6rem);
+              margin-bottom: 1rem;
+            }
 
-      .meta-box {
-        padding: 1rem;
-        border-radius: 1.25rem;
-        background: rgba(236, 226, 214, 0.5);
-        border: 1px solid rgba(75, 56, 45, 0.06);
-      }
+            h2 {
+              font-size: clamp(2.3rem, 5vw, 3.5rem);
+              margin-bottom: 0.6rem;
+            }
 
-      .meta-label {
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-size: 0.7rem;
-        color: var(--mocha);
-        margin-bottom: 0.35rem;
-      }
+            .hero-card p,
+            .section-card p,
+            .section-card li,
+            .rsvp-note,
+            label {
+              color: var(--mocha);
+              line-height: 1.8;
+            }
 
-      .meta-value {
-        color: var(--espresso);
-        font-size: 1rem;
-      }
+            .hero-card p {
+              max-width: 38rem;
+              margin: 0 auto;
+            }
 
-      .button {
-        display: inline-block;
-        margin-top: 1.5rem;
-        padding: 0.95rem 1.45rem;
-        border-radius: 999px;
-        background: var(--espresso);
-        color: var(--white);
-        font-size: 0.95rem;
-      }
+            .hero-meta {
+              display: grid;
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+              gap: 1rem;
+              margin-top: 2rem;
+            }
 
-      section {
-        padding: 1rem 0 2rem;
-      }
+            .meta-box {
+              padding: 1rem;
+              border-radius: 1.25rem;
+              background: rgba(236, 226, 214, 0.5);
+              border: 1px solid rgba(75, 56, 45, 0.06);
+            }
 
-      .section-card {
-        padding: 2rem;
-      }
+            .meta-label {
+              text-transform: uppercase;
+              letter-spacing: 0.12em;
+              font-size: 0.7rem;
+              color: var(--mocha);
+              margin-bottom: 0.35rem;
+            }
 
-      .details-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-        margin-top: 1.25rem;
-      }
+            .meta-value {
+              color: var(--espresso);
+              font-size: 1rem;
+            }
 
-      .mini-card {
-        padding: 1.4rem;
-        border-radius: 1.5rem;
-        background: rgba(247, 242, 235, 0.7);
-        border: 1px solid rgba(75, 56, 45, 0.06);
-      }
+            .button {
+              display: inline-block;
+              margin-top: 1.5rem;
+              padding: 0.95rem 1.45rem;
+              border-radius: 999px;
+              background: var(--espresso);
+              color: var(--white);
+              font-size: 0.95rem;
+            }
 
-      .mini-card h3 {
-        font-size: 1.6rem;
-        margin-bottom: 0.6rem;
-      }
+            section {
+              padding: 1rem 0 2rem;
+            }
 
-      .rsvp-layout {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 1rem;
-      }
+            .section-card {
+              padding: 2rem;
+            }
 
-      .rsvp-card {
-        padding: 2rem;
-      }
+            .details-grid {
+              display: grid;
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+              gap: 1rem;
+              margin-top: 1.25rem;
+            }
 
-      .rsvp-side {
-        background: linear-gradient(180deg, rgba(236, 226, 214, 0.65), rgba(255, 253, 250, 0.9));
-      }
+            .mini-card {
+              padding: 1.4rem;
+              border-radius: 1.5rem;
+              background: rgba(247, 242, 235, 0.7);
+              border: 1px solid rgba(75, 56, 45, 0.06);
+            }
 
-      form {
-        display: grid;
-        gap: 1rem;
-      }
+            .mini-card h3 {
+              font-size: 1.6rem;
+              margin-bottom: 0.6rem;
+            }
 
-      .form-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-      }
+            .rsvp-layout {
+              display: grid;
+              grid-template-columns: 0.9fr 1.1fr;
+              gap: 1rem;
+            }
 
-      label {
-        display: grid;
-        gap: 0.45rem;
-        font-size: 0.92rem;
-      }
+            .rsvp-card {
+              padding: 2rem;
+            }
 
-      input, select, textarea {
-        width: 100%;
-        border: 1px solid rgba(75, 56, 45, 0.12);
-        border-radius: 1rem;
-        padding: 0.95rem 1rem;
-        font: inherit;
-        color: var(--espresso);
-        background: var(--white);
-        outline: none;
-      }
+            .rsvp-side {
+              background: linear-gradient(180deg, rgba(236, 226, 214, 0.65), rgba(255, 253, 250, 0.9));
+            }
 
-      input:focus, select:focus, textarea:focus {
-        border-color: var(--taupe);
-        box-shadow: 0 0 0 4px rgba(197, 179, 162, 0.16);
-      }
+            form {
+              display: grid;
+              gap: 1rem;
+            }
 
-      textarea {
-        min-height: 140px;
-        resize: vertical;
-      }
+            .form-grid {
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              gap: 1rem;
+            }
 
-      .full { grid-column: 1 / -1; }
+            label {
+              display: grid;
+              gap: 0.45rem;
+              font-size: 0.92rem;
+            }
 
-      .submit {
-        border: none;
-        border-radius: 999px;
-        padding: 0.95rem 1.45rem;
-        background: var(--espresso);
-        color: var(--white);
-        font: inherit;
-        cursor: pointer;
-      }
+            input, select, textarea {
+              width: 100%;
+              border: 1px solid rgba(75, 56, 45, 0.12);
+              border-radius: 1rem;
+              padding: 0.95rem 1rem;
+              font: inherit;
+              color: var(--espresso);
+              background: var(--white);
+              outline: none;
+            }
 
-      .success {
-        display: none;
-        margin-top: 0.5rem;
-        padding: 1rem;
-        border-radius: 1rem;
-        background: rgba(236, 226, 214, 0.55);
-        color: var(--espresso);
-      }
+            input:focus, select:focus, textarea:focus {
+              border-color: var(--taupe);
+              box-shadow: 0 0 0 4px rgba(197, 179, 162, 0.16);
+            }
 
-      footer {
-        text-align: center;
-        padding: 0 0 3rem;
-        color: var(--mocha);
-      }
+            textarea {
+              min-height: 140px;
+              resize: vertical;
+            }
 
-      @media (max-width: 900px) {
-        .hero-meta,
-        .details-grid,
-        .rsvp-layout,
-        .form-grid {
-          grid-template-columns: 1fr;
-        }
-      }
+            .full { grid-column: 1 / -1; }
 
-      @media (max-width: 640px) {
-        .nav-links { display: none; }
-        .hero-card, .section-card, .rsvp-card { padding: 1.4rem; border-radius: 1.5rem; }
-        .hero { padding-top: 2rem; }
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="nav">
-      <div class="nav-inner">
-        <a href="#top" class="brand">Andrea Grad 2026</a>
-        <div class="nav-links">
-          <a href="#details">Details</a>
-          <a href="#rsvp">RSVP</a>
-        </div>
-      </div>
-    </nav>
+            .submit {
+              border: none;
+              border-radius: 999px;
+              padding: 0.95rem 1.45rem;
+              background: var(--espresso);
+              color: var(--white);
+              font: inherit;
+              cursor: pointer;
+            }
 
-    <main class="container" id="top">
-      <section class="hero">
-        <div class="hero-card">
-          <div class="eyebrow">Graduation Celebration</div>
-          <h1>Class of 2026</h1>
-          <p>
-            Please join me in celebrating my graduation. A soft, simple, neutral-toned celebration with the people I love most.
-          </p>
-          <a class="button" href="#rsvp">RSVP</a>
+            .success {
+              display: none;
+              margin-top: 0.5rem;
+              padding: 1rem;
+              border-radius: 1rem;
+              background: rgba(236, 226, 214, 0.55);
+              color: var(--espresso);
+            }
 
-          <div class="hero-meta">
-            <div class="meta-box">
-              <div class="meta-label">Date</div>
-              <div class="meta-value">Saturday, May 2, 2026</div>
-            </div>
-            <div class="meta-box">
-              <div class="meta-label">Time</div>
-              <div class="meta-value">5:30 PM</div>
-            </div>
-            <div class="meta-box">
-              <div class="meta-label">Location</div>
-              <div class="meta-value">Pasadena, California</div>
-            </div>
-          </div>
-        </div>
-      </section>
+            footer {
+              text-align: center;
+              padding: 0 0 3rem;
+              color: var(--mocha);
+            }
 
-      <section id="details">
-        <div class="section-card">
-          <div class="eyebrow">Details</div>
-          <h2>Celebration details</h2>
-          <p>
-            Add your exact address, parking note, dress code, and anything else guests should know before arriving.
-          </p>
+            @media (max-width: 900px) {
+              .hero-meta,
+              .details-grid,
+              .rsvp-layout,
+              .form-grid {
+                grid-template-columns: 1fr;
+              }
+            }
 
-          <div class="details-grid">
-            <div class="mini-card">
-              <h3>Where</h3>
-              <p>Insert your venue or home address here.</p>
-            </div>
-            <div class="mini-card">
-              <h3>Dress</h3>
-              <p>Neutral, polished, and picture-ready.</p>
-            </div>
-            <div class="mini-card">
-              <h3>Note</h3>
-              <p>Please RSVP by your chosen deadline.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="rsvp">
-        <div class="rsvp-layout">
-          <div class="rsvp-card rsvp-side">
-            <div class="eyebrow">RSVP</div>
-            <h2>Save your spot</h2>
-            <p class="rsvp-note">
-              This is a cute front-end RSVP section for your GitHub Pages site. To actually collect responses, connect it later to Formspree or replace it with a Google Form link.
-            </p>
-          </div>
-
-          <div class="rsvp-card">
-            <form id="rsvpForm">
-              <div class="form-grid">
-                <label>
-                  Full name
-                  <input type="text" name="name" placeholder="Your name" required />
-                </label>
-
-                <label>
-                  Email or phone
-                  <input type="text" name="contact" placeholder="Best contact" required />
-                </label>
-
-                <label>
-                  RSVP
-                  <select name="attendance" required>
-                    <option value="">Select one</option>
-                    <option value="yes">Will attend</option>
-                    <option value="no">Cannot attend</option>
-                    <option value="maybe">Maybe</option>
-                  </select>
-                </label>
-
-                <label>
-                  Number attending
-                  <select name="guests">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                </label>
-
-                <label class="full">
-                  Message
-                  <textarea name="message" placeholder="Optional note"></textarea>
-                </label>
+            @media (max-width: 640px) {
+              .nav-links { display: none; }
+              .hero-card, .section-card, .rsvp-card { padding: 1.4rem; border-radius: 1.5rem; }
+              .hero { padding-top: 2rem; }
+            }
+          </style>
+        </head>
+        <body>
+          <nav class="nav">
+            <div class="nav-inner">
+              <a href="#top" class="brand">Andrea Grad 2026</a>
+              <div class="nav-links">
+                <a href="#details">Details</a>
+                <a href="#rsvp">RSVP</a>
               </div>
+            </div>
+          </nav>
 
-              <button class="submit" type="submit">Submit RSVP</button>
-              <div class="success" id="successMessage">Thanks! Your RSVP was submitted for demo purposes.</div>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
+          <main class="container" id="top">
+            <section class="hero">
+              <div class="hero-card">
+                <div class="eyebrow">Graduation Celebration</div>
+                <h1>Class of 2026</h1>
+                <p>
+                  Please join me in celebrating my graduation. A soft, simple, neutral-toned celebration with the people I love most.
+                </p>
+                <a class="button" href="#rsvp">RSVP</a>
 
-    <footer>Andrea Grad Celebration</footer>
+                <div class="hero-meta">
+                  <div class="meta-box">
+                    <div class="meta-label">Date</div>
+                    <div class="meta-value">Saturday, May 2, 2026</div>
+                  </div>
+                  <div class="meta-box">
+                    <div class="meta-label">Time</div>
+                    <div class="meta-value">5:30 PM</div>
+                  </div>
+                  <div class="meta-box">
+                    <div class="meta-label">Location</div>
+                    <div class="meta-value">Pasadena, California</div>
+                  </div>
+                </div>
+              </div>
+            </section>
 
-    <script>
-      const form = document.getElementById('rsvpForm');
-      const successMessage = document.getElementById('successMessage');
+            <section id="details">
+              <div class="section-card">
+                <div class="eyebrow">Details</div>
+                <h2>Celebration details</h2>
+                <p>
+                  Add your exact address, parking note, dress code, and anything else guests should know before arriving.
+                </p>
 
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        successMessage.style.display = 'block';
-        form.reset();
-      });
-    </script>
-  </body>
-</html>
+                <div class="details-grid">
+                  <div class="mini-card">
+                    <h3>Where</h3>
+                    <p>Insert your venue or home address here.</p>
+                  </div>
+                  <div class="mini-card">
+                    <h3>Dress</h3>
+                    <p>Neutral, polished, and picture-ready.</p>
+                  </div>
+                  <div class="mini-card">
+                    <h3>Note</h3>
+                    <p>Please RSVP by your chosen deadline.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="rsvp">
+              <div class="rsvp-layout">
+                <div class="rsvp-card rsvp-side">
+                  <div class="eyebrow">RSVP</div>
+                  <h2>Save your spot</h2>
+                  <p class="rsvp-note">
+                    Responses are collected via the Google RSVP form linked below.
+                  </p>
+                  <a class="button" href="https://forms.gle/nWiRnduU6rhyJLh69" target="_blank" rel="noopener noreferrer">Open RSVP form</a>
+                </div>
+
+                <div class="rsvp-card">
+                  <a class="button" href="https://forms.gle/nWiRnduU6rhyJLh69" target="_blank" rel="noopener noreferrer">Open RSVP form</a>
+                  <p style="margin-top:0.5rem;color:var(--mocha);font-size:0.95rem;">Opens in a new tab; responses saved to Google Forms.</p>
+                  <form id="rsvpForm">
+                    <div class="form-grid">
+                      <label>
+                        Full name
+                        <input type="text" name="name" placeholder="Your name" required />
+                      </label>
+
+                      <label>
+                        Phone
+                        <input type="text" name="contact" placeholder="Best contact" required />
+                      </label>
+
+                      <label>
+                        RSVP
+                        <select name="attendance" required>
+                          <option value="">Select one</option>
+                          <option value="yes">Will attend</option>
+                          <option value="no">Cannot attend</option>
+                          <option value="maybe">Maybe</option>
+                        </select>
+                      </label>
+
+                      <label>
+                        Number attending
+                        <select name="guests">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </label>
+
+                      <label class="full">
+                        Message
+                        <textarea name="message" placeholder="Optional note"></textarea>
+                      </label>
+                    </div>
+
+                    <button class="submit" type="submit">Submit RSVP</button>
+                    <div class="success" id="successMessage">Thanks! Your RSVP was submitted for demo purposes.</div>
+                  </form>
+                </div>
+              </div>
+            </section>
+          </main>
+
+          <footer>Andrea Grad Celebration</footer>
+
+          <script>
+            const form = document.getElementById('rsvpForm');
+            const successMessage = document.getElementById('successMessage');
+
+            form.addEventListener('submit', function (event) {
+              event.preventDefault();
+              successMessage.style.display = 'block';
+              form.reset();
+            });
+          </script>
+        </body>
+      </html>
